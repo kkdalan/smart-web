@@ -19,19 +19,19 @@ public class HelloMain {
 
 	private static void testCGLibProxy() {
 		Hello helloProxy = CGLibProxy.getInstance().getProxy(HelloImpl.class);
-		helloProxy.say("Jack");
+		helloProxy.sayHello("Jack");
 	}
 
 	private static void testDynamicProxy() {
 		Hello hello = new HelloImpl();
 		DynamicProxy dynamicProxy = new DynamicProxy(hello);
 		Hello helloProxy = dynamicProxy.getProxy(); 
-		helloProxy.say("Jack");
+		helloProxy.sayHello("Jack");
 	}
 
 	private static void testStaticProxy() {
 		Hello helloProxy = new HelloProxy();
-		 helloProxy.say("Jack");
+		 helloProxy.sayHello("Jack");
 	}
 
 }

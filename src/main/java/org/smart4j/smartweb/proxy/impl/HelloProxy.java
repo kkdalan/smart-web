@@ -11,7 +11,7 @@ public class HelloProxy implements Hello {
 	}
 	
 	@Override
-	public void say(String name) {
+	public void sayHello(String name) {
 		before();
 		System.out.println("Hello! " + name);
 		after();

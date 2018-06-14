@@ -5,7 +5,7 @@ import org.smart4j.smartweb.proxy.Hello;
 public class HelloImpl implements Hello {
 
 	@Override
-	public void say(String name) {
+	public void sayHello(String name) {
 		System.out.println("Hello! " + name);
 	}
 
