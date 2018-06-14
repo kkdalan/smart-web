@@ -1,4 +1,4 @@
-package org.smart4j.smartweb.proxy.impl;
+package org.smart4j.smartweb.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
