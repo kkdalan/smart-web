@@ -14,6 +14,7 @@ public class ControllerAspect extends AspectProxy {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ControllerAspect.class);
 
 	private long beginTime;
+	private long endTime;
 
 	@Override
 	public void before(Class<?> cls, Method method, Object[] params) throws Throwable {
@@ -25,7 +26,8 @@ public class ControllerAspect extends AspectProxy {
 
 	@Override
 	public void after(Class<?> cls, Method method, Object[] params) throws Throwable {
-		LOGGER.debug(String.format("time: %dms", System.currentTimeMillis() - beginTime));
+		endTime = System.currentTimeMillis();
+		LOGGER.debug(String.format("time: %dms", endTime - beginTime));
 		LOGGER.debug("------------------ END ----------------------");
 	}
 
