@@ -1,10 +1,10 @@
 package org.smart4j.smartweb.thread;
 
-public class ClientThread extends Thread {
+public class SequenceClientThread extends Thread {
 
 	private Sequence sequence = null;
 
-	public ClientThread(Sequence sequence) {
+	public SequenceClientThread(Sequence sequence) {
 		this.sequence = sequence;
 	}
 

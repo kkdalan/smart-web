@@ -13,9 +13,9 @@ public class SequenceA implements Sequence {
 		
 		Sequence sequence = new SequenceA();
 		
-		ClientThread thread1 = new ClientThread(sequence);
-		ClientThread thread2 = new ClientThread(sequence);
-		ClientThread thread3 = new ClientThread(sequence);
+		SequenceClientThread thread1 = new SequenceClientThread(sequence);
+		SequenceClientThread thread2 = new SequenceClientThread(sequence);
+		SequenceClientThread thread3 = new SequenceClientThread(sequence);
 		
 		thread1.start();
 		thread2.start();

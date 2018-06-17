@@ -8,8 +8,9 @@ import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.smart4j.smartweb.helper.DatabaseHelper;
 import org.smart4j.smartweb.service.ProductService;
+import org.smart4j.smartweb.thread.ProductClientThread;
+import org.smart4j.smartweb.util.DBUtil;
 
 public class ProductServiceImpl implements ProductService {
 
@@ -19,24 +20,30 @@ public class ProductServiceImpl implements ProductService {
 	private static final String INSERT_LOG_SQL = "insert into log (created, description) values(?,?)";
 
 	public static void main(String[] args) {
-		ProductService productService = new ProductServiceImpl();
-		productService.updateProductPrice(1, 3000);
+		
+		// ProductService productService = new ProductServiceImpl();
+		// productService.updateProductPrice(1, 3000);
+
+		for (int i = 0; i < 10; i++) {
+			ProductService productService = new ProductServiceImpl();
+			ProductClientThread thread = new ProductClientThread(productService);
+			thread.start();
+		}
 	}
 
 	@Override
 	public void updateProductPrice(long productId, int price) {
-		Connection conn = DatabaseHelper.getConnection();
+		Connection conn = DBUtil.getCOnnection();
 		try {
 			conn.setAutoCommit(false);
-
 			updateProduct(conn, price, productId);
 			insertLog(conn, "Create product.");
-
 			conn.commit();
-
 		} catch (Exception e) {
 			LOGGER.error("update product price failure", e);
 			throw new RuntimeException(e);
+		} finally {
+			DBUtil.closeConnection();
 		}
 
 	}
