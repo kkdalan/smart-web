@@ -8,9 +8,9 @@ import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.smart4j.framework.util.DBUtil;
 import org.smart4j.smartweb.service.ProductService;
 import org.smart4j.smartweb.thread.ProductClientThread;
-import org.smart4j.smartweb.util.DBUtil;
 
 public class ProductServiceImpl implements ProductService {
 

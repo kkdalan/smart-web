@@ -6,7 +6,8 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.smart4j.framework.annotation.Service;
-import org.smart4j.smartweb.helper.DatabaseHelper;
+import org.smart4j.framework.annotation.Transaction;
+import org.smart4j.framework.helper.DatabaseHelper;
 import org.smart4j.smartweb.model.Customer;
 
 @Service
@@ -24,14 +25,17 @@ public class CustomerService {
 		return DatabaseHelper.queryEntity(Customer.class, sql);
 	}
 
+	@Transaction
 	public boolean createCustomer(Map<String, Object> fieldMap) {
 		return DatabaseHelper.insertEntity(Customer.class, fieldMap);
 	}
 
+	@Transaction
 	public boolean updateCustomer(long id, Map<String, Object> fieldMap) {
 		return DatabaseHelper.updateEntity(Customer.class, id, fieldMap);
 	}
 
+	@Transaction
 	public boolean deleteCustomer(long id) {
 		return DatabaseHelper.deleteEntity(Customer.class, id);
 	}
