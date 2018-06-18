@@ -1,5 +1,3 @@
-
-
 create database demo;
 use demo;
 
@@ -31,9 +29,49 @@ CREATE TABLE log (
     description text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE user (
+	id bigint(20) NOT NULL AUTO_INCREMENT,
+    username varchar(255) DEFAULT NULL,
+    password varchar(255) DEFAULT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE role (
+	id bigint(20) NOT NULL AUTO_INCREMENT,
+    role_name varchar(255) DEFAULT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE permission (
+	id bigint(20) NOT NULL AUTO_INCREMENT,
+    permission_name varchar(255) DEFAULT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE user_role (
+	id bigint(20) NOT NULL AUTO_INCREMENT,
+    user_id bigint(20),
+    role_id bigint(20),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE role_permission (
+	id bigint(20) NOT NULL AUTO_INCREMENT,
+    role_id bigint(20),
+	permission_id bigint(20),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 select * from Customer;
 select * from product;
 select * from log;
+
+select * from user;
+select * from role;
+select * from permission;
+select * from user_role;
+select * from role_permission;
 
 create database demo_test;
 use demo_test;
