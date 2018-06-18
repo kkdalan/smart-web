@@ -7,7 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.smart4j.framework.annotation.Service;
 import org.smart4j.framework.annotation.Transaction;
+import org.smart4j.framework.bean.FileParam;
 import org.smart4j.framework.helper.DatabaseHelper;
+import org.smart4j.framework.helper.UploadHelper;
 import org.smart4j.smartweb.model.Customer;
 
 @Service
@@ -26,13 +28,21 @@ public class CustomerService {
 	}
 
 	@Transaction
-	public boolean createCustomer(Map<String, Object> fieldMap) {
-		return DatabaseHelper.insertEntity(Customer.class, fieldMap);
+	public boolean createCustomer(Map<String, Object> fieldMap, FileParam fileParam) {
+		boolean result = DatabaseHelper.insertEntity(Customer.class, fieldMap);
+		if (result) {
+			UploadHelper.uploadFile("/img/upload", fileParam);
+		}
+		return result;
 	}
 
 	@Transaction
-	public boolean updateCustomer(long id, Map<String, Object> fieldMap) {
-		return DatabaseHelper.updateEntity(Customer.class, id, fieldMap);
+	public boolean updateCustomer(long id, Map<String, Object> fieldMap, FileParam fileParam) {
+		boolean result = DatabaseHelper.updateEntity(Customer.class, id, fieldMap);
+		if (result) {
+			UploadHelper.uploadFile("/img/upload", fileParam);
+		}
+		return result;
 	}
 
 	@Transaction

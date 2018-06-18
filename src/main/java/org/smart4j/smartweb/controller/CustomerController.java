@@ -7,6 +7,7 @@ import org.smart4j.framework.annotation.Action;
 import org.smart4j.framework.annotation.Controller;
 import org.smart4j.framework.annotation.Inject;
 import org.smart4j.framework.bean.Data;
+import org.smart4j.framework.bean.FileParam;
 import org.smart4j.framework.bean.Param;
 import org.smart4j.framework.bean.View;
 import org.smart4j.smartweb.model.Customer;
@@ -32,14 +33,16 @@ public class CustomerController {
 	}
 
 	@Action("get:/customer_create")
-	public View create(Param param) {
+	public View create() {
 		return new View("customer_create.jsp");
 	}
 
 	@Action("post:/customer_create")
 	public Data createSubmit(Param param) {
-		Map<String, Object> fieldMap = param.getMap();
-		boolean result = customerService.createCustomer(fieldMap);
+		Map<String, Object> fieldMap = param.getFieldMap();
+		FileParam fileParam = param.getFile("photo");
+		fieldMap.remove("photo");
+		boolean result = customerService.createCustomer(fieldMap, fileParam);
 		return new Data(result);
 	}
 
@@ -53,8 +56,9 @@ public class CustomerController {
 	@Action("put:/customer_edit")
 	public Data editSubmit(Param param) {
 		long id = param.getLong("id");
-		Map<String, Object> fieldMap = param.getMap();
-		boolean result = customerService.updateCustomer(id, fieldMap);
+		Map<String, Object> fieldMap = param.getFieldMap();
+		FileParam fileParam = param.getFile("photo");
+		boolean result = customerService.updateCustomer(id, fieldMap, fileParam);
 		return new Data(result);
 	}
 

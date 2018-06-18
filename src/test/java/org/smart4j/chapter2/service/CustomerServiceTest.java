@@ -7,6 +7,7 @@ import java.util.Map;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.smart4j.framework.bean.FileParam;
 import org.smart4j.framework.helper.DatabaseHelper;
 import org.smart4j.smartweb.model.Customer;
 import org.smart4j.smartweb.service.CustomerService;
@@ -43,7 +44,7 @@ public class CustomerServiceTest {
 		fieldMap.put("name", "customer100");
 		fieldMap.put("contact", "John");
 		fieldMap.put("telephone", "135142345678");
-		boolean result = customerService.createCustomer(fieldMap);
+		boolean result = customerService.createCustomer(fieldMap, null);
 		Assert.assertTrue(result);
 	}
 
@@ -52,7 +53,7 @@ public class CustomerServiceTest {
 		long id = 1;
 		Map<String, Object> fieldMap = new HashMap<String, Object>();
 		fieldMap.put("contact", "Eric");
-		boolean result = customerService.updateCustomer(id, fieldMap);
+		boolean result = customerService.updateCustomer(id, fieldMap, null);
 		Assert.assertTrue(result);
 	}
 
