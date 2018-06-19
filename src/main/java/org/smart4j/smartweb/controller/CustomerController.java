@@ -63,8 +63,15 @@ public class CustomerController {
 		return new Data(result);
 	}
 
-	@Action("delete:/customer_edit")
-	public Data delete(Param param) {
+	@Action("get:/customer_delete")
+	public View delete(Param param) {
+		long id = param.getLong("id");
+		Customer customer = customerService.getCustomer(id);
+		return new View("customer_delete.jsp").addModel("customer", customer);
+	}
+	
+	@Action("post:/customer_delete")
+	public Data deleteSubmit(Param param) {
 		long id = param.getLong("id");
 		boolean result = customerService.deleteCustomer(id);
 		return new Data(result);
