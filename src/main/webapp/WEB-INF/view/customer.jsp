@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>客戶列表</h1>
-
+	<hr>
 	<table>
 		<tr>
 			<th>客戶名稱</th>
@@ -24,12 +24,15 @@
 				<td>${customer.telephone}</td>
 				<td>${customer.email}</td>
 				<td>
+				    <a href="${BASE}/customer_show?id=${customer.id}">檢視</a>
 					<a href="${BASE}/customer_edit?id=${customer.id}">編輯</a>
 					<a href="${BASE}/customer_delete?id=${customer.id}">刪除</a>
 				</td>
 			</tr>
 		</c:forEach>
-	
 	</table>
+	<hr>
+	<a href="${BASE}/customer_create">新增</a>
+	
 </body>
 </html>
