@@ -53,11 +53,12 @@ public class CustomerController {
 		return new View("customer_edit.jsp").addModel("customer", customer);
 	}
 
-	@Action("put:/customer_edit")
+	@Action("post:/customer_edit")
 	public Data editSubmit(Param param) {
 		long id = param.getLong("id");
 		Map<String, Object> fieldMap = param.getFieldMap();
 		FileParam fileParam = param.getFile("photo");
+		fieldMap.remove("photo");
 		boolean result = customerService.updateCustomer(id, fieldMap, fileParam);
 		return new Data(result);
 	}
