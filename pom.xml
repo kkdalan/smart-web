@@ -34,6 +34,12 @@
 			<version>5.0.7.RELEASE</version>
 		</dependency>
 
+		<!-- Smart Security Plugin -->
+		<dependency>
+			<groupId>org.smart4j</groupId>
+			<artifactId>smart-plugin-security</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
 	</dependencies>
 
