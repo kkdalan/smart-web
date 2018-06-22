@@ -12,15 +12,15 @@
 
 	<security:guest>
 		<p>身分:遊客</p>
-		<a href="${BASE}/login"/>">登入</a>
+		<a href="${BASE}/login"/>登入</a>
 	</security:guest>
 
 	<security:user>
 		<p>身分:<security:principal/></p>
+		<a href="${BASE}/logout"/>登出</a>
 		<ul>
-			<li><a href="${BASE}/customer"/>">客戶管理</a></li>
+			<li><a href="${BASE}/customer"/>客戶管理</a></li>
 		</ul>
-		<a href="${BASE}/logout"/>">登出</a>
 	</security:user>
 
 </body>
