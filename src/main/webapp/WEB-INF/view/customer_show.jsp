@@ -42,23 +42,16 @@
 				</td>
 			</tr>
 		</table>
-		<button type="submit">客戶列表</button>
+		<button id="btn_customer" type="button">客戶列表</button>
 	</form>
 
 	<script src="${BASE}/asset/lib/jquery/jquery-3.3.1.min.js"></script>
 	<script src="${BASE}/asset/lib/jquery-form/jquery.form.min.js"></script>
 	<script>
-		$(function(){
-			$('#customer_form').ajaxForm({
-				type: 'get',
-				url: '${BASE}/customer',
-				success: function(data){
-					if(data){
-						location.href = '${BASE}/customer';
-					}
-				}
-			});			
-		});
+		$('#btn_customer').click(function(e) {
+			  e.preventDefault();
+			  location.href = '${BASE}/customer';
+		});			
 	</script>
 </body>
 </html>
