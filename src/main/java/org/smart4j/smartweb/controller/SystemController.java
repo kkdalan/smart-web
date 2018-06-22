@@ -34,7 +34,7 @@ public class SystemController {
 			LOGGER.error("login failure", e);
 			return new View("/login");
 		}
-		return new View("login.jsp");
+		return new View("/customer");
 	}
 
 	@Action("get:/logout")

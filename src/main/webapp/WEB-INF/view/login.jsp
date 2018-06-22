@@ -27,7 +27,6 @@
 					</td>
 				</tr>
 			</table>
-			<button type="submit">儲存</button>
 		</form>
 	</security:guest>
 
