@@ -1,10 +1,12 @@
-package org.smart4j.smartweb.ws.sopa_jaxws.impl;
+package org.smart4j.smartweb.ws.sopa_jaxws;
 
 import javax.jws.WebService;
 
 import org.smart4j.smartweb.ws.sopa_jaxws.HelloService;
+import org.springframework.stereotype.Component;
 
-@WebService(serviceName = "HelloService", portName = "HelloServicePort", endpointInterface = "org.smart4j.smartweb.ws.sopa_jaxws.HelloService")
+@WebService
+@Component
 public class HelloServiceImpl implements HelloService {
 
 	@Override
