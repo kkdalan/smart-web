@@ -1,8 +1,8 @@
-package org.smart4j.smartweb.ws.sopa_cxf;
+package org.smart4j.smartweb.ws.soap_cxf;
 
 import org.apache.cxf.frontend.ServerFactoryBean;
-import org.smart4j.smartweb.ws.sopa_jaxws.HelloService;
-import org.smart4j.smartweb.ws.sopa_jaxws.HelloServiceImpl;
+import org.smart4j.smartweb.ws.soap_jaxws.HelloService;
+import org.smart4j.smartweb.ws.soap_jaxws.HelloServiceImpl;
 
 public class SimpleServer {
 

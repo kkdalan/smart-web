@@ -8,11 +8,8 @@
   http://cxf.apache.org/jaxws
   http://cxf.apache.org/schemas/jaxws.xsd">
 
-	<bean id="factoryBean" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
-		<property name="serviceClass" value="org.smart4j.smartweb.ws.soap_jaxws.HelloService" />
-		<property name="address" value="http://localhost:8080/smart-web/ws/soap/hello" />
-	</bean>
-	
-	<bean id="helloService" factory-bean="factoryBean" factory-method="create"/>
-
+	<jaxws:client id="helloService"
+		serviceClass="org.smart4j.smartweb.ws.soap_jaxws.HelloService"
+		address="http://localhost:8080/smart-web/ws/soap/hello" />
+		
 </beans>

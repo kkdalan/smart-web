@@ -1,12 +1,12 @@
-package org.smart4j.smartweb.ws.sopa_cxf;
+package org.smart4j.smartweb.ws.soap_cxf;
 
 import org.apache.cxf.endpoint.Client;
-import org.apache.cxf.endpoint.dynamic.DynamicClientFactory;
+import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 
-public class DynamicClient {
+public class JaxWsDynamicClient {
 
 	public static void main(String[] args) {
-		DynamicClientFactory factory = DynamicClientFactory.newInstance();
+		JaxWsDynamicClientFactory factory = JaxWsDynamicClientFactory.newInstance();
 		Client client = factory.createClient("http://localhost:8080/smart-web/ws/soap/hello?wsdl");
 		try {
 			Object[] results = client.invoke("say", "world");
@@ -14,6 +14,6 @@ public class DynamicClient {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
 	}
 }

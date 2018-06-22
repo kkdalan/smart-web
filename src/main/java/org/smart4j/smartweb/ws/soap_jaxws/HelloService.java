@@ -1,4 +1,4 @@
-package org.smart4j.smartweb.ws.sopa_jaxws;
+package org.smart4j.smartweb.ws.soap_jaxws;
 
 import javax.jws.WebService;
 

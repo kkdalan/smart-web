@@ -1,10 +1,10 @@
-package org.smart4j.smartweb.ws.sopa_cxf;
+package org.smart4j.smartweb.ws.soap_cxf;
 
-import org.smart4j.smartweb.ws.sopa_jaxws.HelloService;
+import org.smart4j.smartweb.ws.soap_jaxws.HelloService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class SpringCxfClient {
+public class SpringBeanClient {
 
 	public static void main(String[] args) {
 
