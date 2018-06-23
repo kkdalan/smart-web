@@ -27,6 +27,12 @@
 			<artifactId>smart-plugin-security</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+		<!-- Smart Soap Plugin -->
+		<dependency>
+			<groupId>org.smart4j</groupId>
+			<artifactId>smart-plugin-soap</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 		<!-- CXF -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>

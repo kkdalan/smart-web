@@ -1,4 +1,4 @@
-package org.smart4j.chapter2.service;
+package org.smart4j.smartweb.service;
 
 import java.util.HashMap;
 import java.util.List;
