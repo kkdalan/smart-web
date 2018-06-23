@@ -19,8 +19,17 @@
 				<entry key="passwordType" value="PasswordText" />
 				<entry key="passwordCallbackRef" value-ref="serverPasswordCallback" />
 				-->
+				
+				<!-- 
 				<entry key="action" value="Signature" />
 				<entry key="signaturePropFile" value="server.properties" />
+			    -->
+			    
+			    <entry key="action" value="Signature Encrypt" />
+				<entry key="signaturePropFile" value="server.properties" />
+				<entry key="passwordCallbackRef" value-ref="serverPasswordCallback" />
+				<entry key="decryptionPropFile" value="server.properties" />
+			    
 			</map>
 		</constructor-arg>
 	</bean>
