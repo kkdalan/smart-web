@@ -17,9 +17,15 @@
 		class="org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor">
 		<constructor-arg>
 			<map>
+			    <!-- 
 				<entry key="action" value="UsernameToken" />
 				<entry key="user" value="client" />
 				<entry key="passwordType" value="PasswordText" />
+				<entry key="passwordCallbackRef" value-ref="clientPasswordCallback" />
+			     -->
+			    <entry key="action" value="Signature" />
+				<entry key="signaturePropFile" value="client.properties" />
+				<entry key="signatureUser" value="client" />
 				<entry key="passwordCallbackRef" value-ref="clientPasswordCallback" />
 			</map>
 		</constructor-arg>
