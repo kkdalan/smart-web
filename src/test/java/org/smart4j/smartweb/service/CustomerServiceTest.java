@@ -7,10 +7,8 @@ import java.util.Map;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.smart4j.framework.bean.FileParam;
 import org.smart4j.framework.helper.DatabaseHelper;
 import org.smart4j.smartweb.model.Customer;
-import org.smart4j.smartweb.service.CustomerService;
 
 public class CustomerServiceTest {
 
