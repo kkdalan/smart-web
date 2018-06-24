@@ -24,19 +24,19 @@
 				<entry key="passwordCallbackRef" value-ref="clientPasswordCallback" />
 			     -->
 			     
-			     <!-- 
 			    <entry key="action" value="Signature" />
 				<entry key="signaturePropFile" value="client.properties" />
 				<entry key="signatureUser" value="client" />
 				<entry key="passwordCallbackRef" value-ref="clientPasswordCallback" />
-			     -->
-			     
+
+				<!--
 			    <entry key="action" value="Signature Encrypt" />
 				<entry key="signaturePropFile" value="client.properties" />
 				<entry key="signatureUser" value="client" />
 				<entry key="passwordCallbackRef" value-ref="clientPasswordCallback" />
 			    <entry key="encryptionPropFile" value="client.properties" />
 			    <entry key="encryptionUser" value="server" />
+			    -->
 			</map>
 		</constructor-arg>
 	</bean>
